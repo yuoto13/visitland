@@ -17,13 +17,6 @@ document.querySelectorAll('.fade-in').forEach(el => {
     observer.observe(el);
 });
 
-// Эффект печатной машинки для подзаголовка
-document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        document.querySelector('.subtitle').classList.add('typing');
-    }, 500);
-});
-
 // Переменные для модального окна
 const hero = document.getElementById('hero');
 const aboutModal = document.getElementById('aboutModal');
@@ -73,4 +66,24 @@ document.addEventListener('DOMContentLoaded', () => {
             retina_detect: true
         });
     }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Анимация имени
+    new Typed('#typed-name', {
+        strings: ['Привет! меня зовут Кирилл'],
+        typeSpeed: 100,
+        showCursor: true,
+        cursorChar: '|',
+        onComplete: () => {
+            // Запуск подзаголовка после завершения имени
+            new Typed('#typed-subtitle', {
+                strings: ['я занимаюсь разработкой красивых и функциональных веб-приложений'],
+                typeSpeed: 50,
+                backSpeed: 30,
+                showCursor: true,
+                cursorChar: '|'
+            });
+        }
+    });
 });

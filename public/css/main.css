@@ -56,15 +56,6 @@ body {
     border-right: 2px solid #fff;
 }
 
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
-
-@keyframes blink {
-    50% { border-color: transparent }
-}
-
 .subtitle {
     font-size: 1.5em;
     margin: 20px 0;
@@ -74,17 +65,6 @@ body {
     border-right: 2px solid #fff;
     width: 0;
 }
-
-.subtitle.typing {
-    animation: typingSubtitle 4s steps(70) forwards, blink 0.5s infinite;
-    animation-delay: 3s;
-}
-
-@keyframes typingSubtitle {
-    from { width: 0; opacity: 1; }
-    to { width: 100%; opacity: 1; }
-}
-
 /* Модальное окно "Обо мне" */
 .modal {
     position: fixed;
@@ -442,4 +422,17 @@ body {
     .hero h1 { font-size: 2em; }
     .about-header { flex-direction: column; text-align: center; }
     .avatar { margin-right: 0; margin-bottom: 15px; }
+}
+
+.typed-cursor {
+    font-size: 1.2em;
+    color: white;
+    opacity: 1;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
 }
