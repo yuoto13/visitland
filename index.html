@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя визитка</title>
+    <link rel="stylesheet" href="public/css/main.css">
+</head>
+<body>
+    <!-- Курсор -->
+    <div class="cursor"></div>
+
+    <!-- Фон частиц -->
+    <div id="particles-js"></div>
+
+    <!-- Главный экран -->
+    <section class="hero" id="hero">
+        <h1>Привет! меня зовут Кирилл</h1>
+        <p class="subtitle">я занимаюсь разработкой красивых и функциональных веб-приложений</p>
+    </section>
+
+    <!-- Модальное окно "Обо мне" -->
+    <div class="modal" id="aboutModal">
+        <div class="modal-bg-circles">
+            <div class="bg-circle"></div>
+            <div class="bg-circle"></div>
+            <div class="bg-circle"></div>
+        </div>
+        <div class="modal-content">
+            <div class="about-header">
+                <div class="avatar"></div>
+                <div class="bio-info">
+                    <h2>Кирилл</h2>
+                    <p><strong>Возраст:</strong> 23 лет</p>
+                    <p><strong>Город:</strong> Новосибирск</p>
+                </div>
+            </div>
+            
+            <div class="about-me">
+                <h3>Обо мне</h3>
+                <p>Full-stack разработчик с опытом создания современных веб-приложений. Увлечен разработкой интерфейсов с впечатляющими анимациями и отзывчивым дизайном.</p>
+            </div>
+            
+            <div class="tech-stack">
+                <h3>Мой стек</h3>
+                <div class="tech-icons">
+                    <div class="stack-icon" style="background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg'); animation-delay: 0.1s"></div>
+                    <div class="stack-icon" style="background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg'); animation-delay: 0.2s"></div>
+                    <div class="stack-icon" style="background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'); animation-delay: 0.3s"></div>
+                    <div class="stack-icon" style="background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'); animation-delay: 0.4s"></div>
+                    <div class="stack-icon" style="background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg'); animation-delay: 0.5s"></div>
+                    <div class="stack-icon" style="background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-plain-wordmark.svg'); animation-delay: 0.6s"></div>
+                </div>
+                <div class="tech-icons">
+                    <div class="stack-icon" style="background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg'); animation-delay: 0.7s"></div>
+                    <div class="stack-icon" style="background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg'); animation-delay: 0.8s"></div>
+                    <div class="stack-icon" style="background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg'); animation-delay: 0.9s"></div>
+                    <div class="stack-icon" style="background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg'); animation-delay: 1.0s"></div>
+                    <div class="stack-icon" style="background-image: url('https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original-wordmark.svg'); animation-delay: 1.1s"></div>
+                </div>
+            </div>
+            
+            <div class="arrow-down" id="scrollToProjects"></div>
+        </div>
+    </div>
+
+    <!-- Проекты -->
+    <section id="projects" class="projects fade-in">
+        <h2>Мои работы</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x200" alt="Проект 1">
+                <div class="project-info">
+                    <h3>Название проекта</h3>
+                    <p>Краткое описание проекта и технологий</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x200" alt="Проект 2">
+                <div class="project-info">
+                    <h3>Название проекта</h3>
+                    <p>Краткое описание проекта и технологий</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://via.placeholder.com/400x200" alt="Проект 3">
+                <div class="project-info">
+                    <h3>Название проекта</h3>
+                    <p>Краткое описание проекта и технологий</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Навыки -->
+    <section class="skills fade-in">
+        <h2>Навыки</h2>
+        <div class="skill-item">
+            <span>JavaScript</span>
+            <div class="skill-meter"><span style="animation-delay: 0.5s"></span></div>
+        </div>
+        <div class="skill-item">
+            <span>React</span>
+            <div class="skill-meter"><span style="animation-delay: 0.6s"></span></div>
+        </div>
+        <div class="skill-item">
+            <span>Node.js</span>
+            <div class="skill-meter"><span style="animation-delay: 0.7s"></span></div>
+        </div>
+        <div class="skill-item">
+            <span>CSS/SCSS</span>
+            <div class="skill-meter"><span style="animation-delay: 0.8s"></span></div>
+        </div>
+    </section>
+
+    <!-- Контакты -->
+    <section class="contact fade-in">
+        <h2>Связаться со мной</h2>
+        <form>
+            <input type="text" placeholder="Ваше имя">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Сообщение"></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+    </section>
+
+    <script src="vendors/particles.min.js"></script>
+    <script src="public/js/app.js"></script>
+</body>
+</html>
