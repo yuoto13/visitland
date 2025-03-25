@@ -436,3 +436,94 @@ body {
     50% { opacity: 0; }
     100% { opacity: 1; }
 }
+
+.project-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 200;
+            backdrop-filter: blur(10px);
+        }
+
+        .project-modal.active {
+            display: flex;
+        }
+
+        .project-modal-content {
+            width: 90%;
+            max-width: 800px;
+            background: rgba(42, 42, 42, 0.9);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+            position: relative;
+            max-height: 80vh;
+            overflow-y: auto;
+            transform: scale(0.9);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .project-modal.active .project-modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        .project-modal-content .project-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .project-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .project-tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .project-tech-badge {
+            background-color: rgba(78, 205, 196, 0.2);
+            color: #4ecdc4;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .project-link {
+            background: linear-gradient(135deg, #4ecdc4, #4ea8dc);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: transform 0.2s;
+        }
+
+        .project-link:hover {
+            transform: scale(1.05);
+        }

@@ -87,3 +87,70 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+
+// Управление модальным окном проекта
+const projectCards = document.querySelectorAll('.project-card');
+const projectModal = document.getElementById('projectModal');
+const projectModalClose = projectModal.querySelector('.project-modal-close');
+
+// Детали проектов
+const projectDetails = [
+    {
+        title: 'Умный планировщик задач',
+        description: 'Веб-приложение для эффективного управления задачами с интеграцией AI-помощника для оптимизации рабочего процесса.',
+        image: 'https://i.pinimg.com/736x/8b/9c/0b/8b9c0b25a34d98795ad82bbc24bae8c1.jpg',
+        techStack: ['React', 'Node.js', 'MongoDB', 'AI API'],
+        githubLink: '#',
+        demoLink: '#'
+    },
+    {
+        title: 'Платформа электронного обучения',
+        description: 'Интерактивная образовательная платформа с персонализированными курсами и системой оценки прогресса.',
+        image: 'https://via.placeholder.com/800x400',
+        techStack: ['Django', 'React', 'PostgreSQL', 'WebSocket'],
+        githubLink: '#',
+        demoLink: '#'
+    },
+    {
+        title: 'Маркетплейс для фрилансеров',
+        description: 'Социальная платформа для поиска и заказа фриланс-услуг с встроенной системой безопасных транзакций.',
+        image: 'https://via.placeholder.com/800x400',
+        techStack: ['Vue.js', 'Express', 'Redis', 'Stripe API'],
+        githubLink: '#',
+        demoLink: '#'
+    }
+];
+
+projectCards.forEach((card, index) => {
+    card.addEventListener('click', () => {
+        const project = projectDetails[index];
+        
+        projectModal.querySelector('.project-image').src = project.image;
+        projectModal.querySelector('.project-title').textContent = project.title;
+        projectModal.querySelector('.project-description').textContent = project.description;
+        
+        const techStackContainer = projectModal.querySelector('.project-tech-stack');
+        techStackContainer.innerHTML = project.techStack.map(tech => 
+            `<span class="project-tech-badge">${tech}</span>`
+        ).join('');
+        
+        const githubLink = projectModal.querySelector('.project-github');
+        const demoLink = projectModal.querySelector('.project-demo');
+        
+        githubLink.href = project.githubLink;
+        demoLink.href = project.demoLink;
+        
+        projectModal.classList.add('active');
+    });
+});
+
+projectModalClose.addEventListener('click', () => {
+    projectModal.classList.remove('active');
+});
+
+projectModal.addEventListener('click', (e) => {
+    if (e.target === projectModal) {
+        projectModal.classList.remove('active');
+    }
+});
